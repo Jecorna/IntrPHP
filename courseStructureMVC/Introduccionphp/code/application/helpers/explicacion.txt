@@ -1,0 +1,3 @@
+Ningun helper del sistema nunca esta cargado
+Se pueden colocar multiples funciones
+Se colocan abajo del contructor del padre
