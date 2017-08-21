@@ -7,13 +7,22 @@ class Ejemplo extends CI_Controller { // los controladores el nombre de la clase
     $this->load->helper('mihelper');
   }
     function index(){
+      $this->load->helper('form');
       $this->load->helper('mihelper');
+      $this->load->library ('menu',array('<a href="http://www.google.com">inicio</a>','contacto','cursos'));// se le pueden enviar parametros y los recibe el contructor
+      $data['mi_menu'] = $this->menu->construirMenu();
       $this->load->view('ejemplo/headers');
-      $this->load->view('ejemplo/ejemplo_view');
+      $this->load->view('ejemplo/ejemplo_view', $data);
     }
     function holamundo(){
       $this->load->view('ejemplo/headers');
       $this->load->view('ejemplo/ejemplo_view');
     }
+    function nuevo(){
+      $this->load->helper('form');
+      $this->load->view('ejemplo/headers');
+      $this->load->view('ejemplo/formulario');
+    }
+
 }
  ?>
